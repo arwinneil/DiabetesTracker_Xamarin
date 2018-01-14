@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diabetes_Tracker.Intro">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#00bcd4">
+            <Image Source="notebook.png" Aspect="AspectFit" Margin="100,15,100,15" />
+            <Label   Text="DiaLog" FontSize="100" HorizontalTextAlignment="Center" TextColor="White"></Label>
+            <Label   Text="Your log everywhere, anytime." FontSize="30" HorizontalTextAlignment="Center" TextColor="White" ></Label>
+
+
+            <Label   Text="How should we call you?" FontSize="Large"  Margin="25,50,0,0" TextColor="White"></Label>
+
+            <Entry x:Name="name" HorizontalTextAlignment="Center" Margin="25,0,25,0" TextColor="White" FontSize="Large"/>
+         
+            <Button x:Name="Continue" Pressed="Continue_Pressed" Text="CONTINUE"  HorizontalOptions="FillAndExpand" Margin="25,0,25,0"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

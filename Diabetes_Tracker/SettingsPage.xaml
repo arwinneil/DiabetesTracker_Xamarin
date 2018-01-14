@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diabetes_Tracker.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame  HasShadow="True" Padding="0" Margin="15">
+                <StackLayout>
+
+                    <Label Text="Change your name" FontSize="25" Margin="15,0,0,0" TextColor="#283593"></Label>
+
+                    <Entry x:Name="name" HorizontalTextAlignment="Center" Margin="25,0,25,0" TextColor="Black" FontSize="Large" />
+
+                    <Button x:Name="Continue" Pressed="Continue_Pressed" Text="Change Name"  HorizontalOptions="FillAndExpand" Margin="25,0,25,0" />
+                </StackLayout>
+            </Frame>
+
+
+            <Frame  HasShadow="True" Padding="0" Margin="15">
+                <StackLayout>
+
+                    <Label Text="Reset Log" FontSize="25" Margin="15,0,0,0" TextColor="Black"></Label>
+
+                    <Label Text="This will permanently delete all log entries" FontSize="25" Margin="15,0,0,0" TextColor="Red"></Label>
+
+                    <Button x:Name="Reset" Pressed="Reset_Pressed" Text="RESET" TextColor="Red" HorizontalOptions="FillAndExpand" Margin="25,0,25,0" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

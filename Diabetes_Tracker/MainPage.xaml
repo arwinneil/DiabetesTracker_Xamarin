@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Diabetes_Tracker"
+             x:Class="Diabetes_Tracker.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout >
+
+            <Grid Margin="0" Padding="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="land.jpg" Aspect="AspectFill"/>
+                <StackLayout>
+                    <Label x:Name="Hello" FontSize="Large" Margin="15,0,0,0" TextColor="White"></Label>
+                    <Label x:Name="Today" FontSize="Large" Margin="15,0,0,0" TextColor="White"></Label>
+                </StackLayout>
+            </Grid>
+
+            <Frame x:Name="entryFrame" HasShadow="True" Padding="0" Margin="15">
+
+                <Grid Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="pencil.jpg" Aspect="AspectFill" />
+                    <StackLayout>
+                        <Label Text="Add Entry" FontSize="25" Margin="15,0,0,0" TextColor="#283593"></Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="LogsFrame" HasShadow="True" Padding="0" Margin="15">
+
+                <Grid Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="logs.jpg" Aspect="AspectFill" />
+                    <StackLayout>
+                        <Label Text="Audio Logs" FontSize="25" Margin="15,0,0,0" TextColor="White"></Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            
+            <Frame x:Name="SettingsFrame"  HasShadow="True" Padding="0" Margin="15">
+
+                <Grid Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="settings.jpg" Aspect="AspectFill" />
+                    <StackLayout>
+                        <Label Text="Settings" FontSize="25" Margin="15,0,0,0" TextColor="#283593"></Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+
+            <Frame x:Name="AboutUsFrame"  HasShadow="True" Padding="0" Margin="15">
+
+                <Grid Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="about1.jpg" Aspect="AspectFill" />
+                    <StackLayout>
+                        <Label Text="About Mystery Inc." FontSize="25" Margin="15,0,0,0" TextColor="#283593"></Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diabetes_Tracker.LogPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+
+            <ListView x:Name="list" HasUnevenRows="True" VerticalOptions="FillAndExpand" ItemSelected="list_ItemSelected">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  HasShadow="True" Padding="20" Margin="15">
+                                <StackLayout>
+                                    <Label Text="{Binding stringDate}"  FontSize="Large" ></Label>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout>
+                                            <Label Text="Blood Sugar Level" FontSize="Small" TextColor="Gray" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding glucose}"  FontSize="Medium" ></Label>
+                                                <Label Text="mg/dl"  FontSize="Medium"  ></Label>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Column="1">
+
+                                            <Label Text="Physical Activity" FontSize="Small" TextColor="Gray" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding activity}"  FontSize="Medium" ></Label>
+                                                <Label Text="min"  FontSize="Medium" ></Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

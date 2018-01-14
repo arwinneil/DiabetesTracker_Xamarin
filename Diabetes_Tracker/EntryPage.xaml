@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diabetes_Tracker.EntryPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame  HasShadow="True" Padding="20" Margin="15">
+
+                <StackLayout>
+
+                    <Label Text="Date" FontSize="Small" TextColor="Gray" />
+                    <DatePicker x:Name="DatePicker" Format="ddd, MMM d, yyyy" />
+
+                    <Label Text="Glucose Sugar Level" FontSize="Small" TextColor="Gray" />
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="GlucoseEntry" Placeholder="Glucose Sugar Reading" Keyboard="Numeric" HorizontalTextAlignment="End" />
+                        <Label Text="mg/dl"   VerticalOptions="Center" FontSize="Medium"></Label>
+                    </StackLayout>
+
+                    <Label Text="Physical Activity" FontSize="Small" TextColor="Gray" />
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="ActivityEntry" Placeholder="Physical Activity Time" Keyboard="Numeric" HorizontalTextAlignment="End" />
+                        <Label Text="min"   VerticalOptions="Center" FontSize="Medium"></Label>
+                    </StackLayout>
+
+                    <Button x:Name="AddButton" Pressed="UpdateLog" Text="Add to log" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

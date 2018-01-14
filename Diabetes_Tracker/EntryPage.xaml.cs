@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -83,12 +83,6 @@ namespace Diabetes_Tracker
 
             if (_refresh)
             {
-                var existingPages = Navigation.NavigationStack.ToList();
-                foreach (var page in existingPages)
-                {
-                    Navigation.RemovePage(page);
-                }
-
                 Navigation.PushAsync(new MainPage()
                 {
                     Title = "DiaLog"

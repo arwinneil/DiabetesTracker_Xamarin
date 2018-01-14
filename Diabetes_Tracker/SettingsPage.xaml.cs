@@ -33,12 +33,6 @@ namespace Diabetes_Tracker
             StorageHelper.Reset();
             DisplayAlert("", "Log was cleared", "Ok");
 
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
-
             Navigation.PushAsync(new MainPage()
             {
                 Title = "DiaLog"

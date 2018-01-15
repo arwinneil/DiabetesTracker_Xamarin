@@ -18,6 +18,7 @@ namespace Diabetes_Tracker
 			InitializeComponent ();
 		}
 
+        //Function handles change of name
         public async void Continue_Pressed(object sender, EventArgs e)
         {
             StorageHelper.WriteFile("name.dat", name.Text);
@@ -28,6 +29,8 @@ namespace Diabetes_Tracker
             });
         }
 
+
+        //Function handles log deletion
         private void Reset_Pressed(object sender, EventArgs e)
         {
             StorageHelper.Reset();

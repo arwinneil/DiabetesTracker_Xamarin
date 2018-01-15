@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Diabetes_Tracker.Helpers
 {
+
+    //Helper classs to assist storage related activities
+
     public static class StorageHelper
     {
         public static void WriteFile(string fileName, string text)
@@ -15,6 +18,7 @@ namespace Diabetes_Tracker.Helpers
             }
         }
 
+        //Function clears the log json file
         public static void Reset()
         {
             var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -31,6 +35,7 @@ namespace Diabetes_Tracker.Helpers
             return File.ReadAllText(path);
         }
 
+        //Function checks if name.dat exists to determinate if first fun
         public static bool FirstRun()
         {
             var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

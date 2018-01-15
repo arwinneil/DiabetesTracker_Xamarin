@@ -20,6 +20,11 @@ namespace Diabetes_Tracker
         {
             InitializeComponent();
 
+            //Set date picker maximum date to today
+            DatePicker.MaximumDate = DateTime.Now;
+
+            //Rest of funtion loads existing log to the app
+
             _refresh = refresh;
             var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var path = Path.Combine(docsPath, "log.json");
@@ -29,12 +34,18 @@ namespace Diabetes_Tracker
                 LogEntry[] arrayLog = JsonConvert.DeserializeObject<LogEntry[]>(StorageHelper.ReadFile("log.json"));
                 log = new List<LogEntry>(arrayLog);
 
-                DatePicker.MaximumDate = DateTime.Now;
+              
             }
+
         }
 
         private void UpdateLog(object sender, EventArgs e)
+
+
         {
+
+
+            //Validation for zero or null blood sugar values
             if (GlucoseEntry.Text == "0" || GlucoseEntry.Text == null)
             {
                 DisplayAlert("Field cannot be empty", "Please enter a value for blood sugar level", "Ok");
@@ -42,6 +53,7 @@ namespace Diabetes_Tracker
                 return;
             }
 
+            //Validation for negative values
             if (Convert.ToInt16(GlucoseEntry.Text) < 0 || (Convert.ToInt16(ActivityEntry.Text) < 0))
             {
                 DisplayAlert("Negative values not allowed", "Please enter values greater than 0", "Ok");
@@ -49,6 +61,7 @@ namespace Diabetes_Tracker
                 return;
             }
 
+            //Validation for invalid blood sugar values
             if (Convert.ToInt16(GlucoseEntry.Text) < 0 || (Convert.ToInt16(GlucoseEntry.Text) > 200))
             {
                 DisplayAlert("Invalid blood sugar level", "Please enter a value between 0 and 200", "Ok");
@@ -67,6 +80,7 @@ namespace Diabetes_Tracker
                 }
             }
 
+            //Creating log object from data input
             LogEntry newEntry = new LogEntry()
             {
                 glucose = Convert.ToDouble(GlucoseEntry.Text),
@@ -75,12 +89,15 @@ namespace Diabetes_Tracker
                 stringDate = DatePicker.Date.ToString("dddd, MMMM d, yyyy")
             };
 
+            //Adding new log object to list
             log.Add(newEntry);
 
+            //Serialise list to JSON and write to storage
             string jsonLog = JsonConvert.SerializeObject(log);
-
             StorageHelper.WriteFile("log.json", jsonLog);
 
+
+            //Go back to main page
             if (_refresh)
             {
                 Navigation.PushAsync(new MainPage()

@@ -27,6 +27,7 @@ namespace Diabetes_Tracker
             Hello.Text = "Hello, " + StorageHelper.ReadFile("name.dat");
         }
 
+        //Funtion implement tap gestures on image frames
         public void InitializeGestures()
         {
             LogsFrame.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -62,6 +63,8 @@ namespace Diabetes_Tracker
             });
         }
 
+
+        //Function initialises welcome message
         public void InitialiseLog()
         {
             var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -84,6 +87,7 @@ namespace Diabetes_Tracker
             }
         }
 
+        //Rest of function define tap behaviors for each gesture
         public async void openLog()
         {
             await Navigation.PushAsync(new LogPage()

@@ -12,7 +12,8 @@ namespace Diabetes_Tracker
         {
             InitializeComponent();
         }
-
+        
+        //Write name to  storage
         public async void Continue_Pressed(object sender, EventArgs e)
         {
             StorageHelper.WriteFile("name.dat", name.Text);
